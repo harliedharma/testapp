@@ -1,0 +1,33 @@
+apply plugin: 'com.android.dynamic-feature'
+
+android {
+    compileSdkVersion 29
+    
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':app')
+    // ...
+    // Litho
+    implementation 'com.facebook.litho:litho-core:0.34.0'
+    implementation 'com.facebook.litho:litho-widget:0.34.0'
+
+    annotationProcessor 'com.facebook.litho:litho-processor:0.34.0'
+
+    // For integration with Fresco
+    implementation 'com.facebook.litho:litho-fresco:0.34.0'
+
+    // For testing
+    testImplementation 'com.facebook.litho:litho-testing:0.34.0'
+}
